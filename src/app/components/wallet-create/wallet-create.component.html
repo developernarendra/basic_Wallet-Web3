@@ -1,0 +1,15 @@
+<div class="create-wallet-container">
+  <div class="create-wallet-card">
+    <h2>Create New Wallet</h2>
+    <form [formGroup]="walletForm" (ngSubmit)="onCreate()">
+      <div class="form-group">
+        <label for="walletName">Wallet Name</label>
+        <input id="walletName" formControlName="name" placeholder="Enter wallet name" />
+        <div *ngIf="walletForm.get('name')?.hasError('required')" class="error">
+          Wallet name is required
+        </div>
+      </div>
+      <button type="submit" [disabled]="walletForm.invalid">Create Wallet</button>
+    </form>
+  </div>
+</div>

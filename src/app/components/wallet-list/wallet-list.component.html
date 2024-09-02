@@ -1,0 +1,18 @@
+<div class="wallet-list-container">
+  <div class="wallet-card" *ngFor="let wallet of wallets">
+    <h3>{{ wallet.name }}</h3>
+    <div class="wallet-detail">
+      <span class="label">Mnemonic:</span>
+      <span class="value">{{ wallet.mnemonic }}</span>
+    </div>
+    <div class="wallet-detail">
+      <span class="label">Public Key:</span>
+      <span class="value">{{ wallet.publicKey }}</span>
+    </div>
+    <div class="wallet-detail">
+      <span class="label">Private Key:</span>
+      <span class="value">{{ wallet.privateKey }}</span>
+    </div>
+    <button (click)="onDelete(wallet.id)">Delete</button>
+  </div>
+</div>
